@@ -207,7 +207,19 @@ STANDONSLOPE:
 	
 	LDA !SLOPE_SPRITE_PATCH_VALUE		;\ set the correct value for the slope sprite patch
 	STA !SLOPE_SPRITE_PATCH_FREE_RAM	;/
-	
+
+	; update x position from sprite movement
+	LDY #$00
+	LDA $1491|!Base2
+	BPL +
+	DEY
++	CLC
+	ADC $94
+	STA $94
+	TYA
+	ADC $95
+	STA $95
+
 	RTS
 	
 MOVEMENT:
