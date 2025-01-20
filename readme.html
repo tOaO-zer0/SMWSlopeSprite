@@ -276,7 +276,7 @@
 			
 			
 			let replacementsAsm = {
-			  "STEEP": style == "very_steep" ? formatToASMFile(1, 2, true, true) : formatToASMFile(0, 2, true, true),
+			  "STEEP": type == "very_steep" ? formatToASMFile(1, 2, true, true) : formatToASMFile(0, 2, true, true),
 			  "SLOPE_SPRITE_PATCH_VALUE": formatToASMFile(slope_sprite_patch_value[direction][type], 2, true, true),
 			  "NR_OF_TILES": formatToASMFile(deciToHex(tilemap.length), 2, true, true),
 			  "WIDTH": formatToASMFile(deciToHex(width*16), 4, true, true),
